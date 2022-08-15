@@ -10,7 +10,7 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ('email',)
 
 
-class CustomUserChargeForm(UserChangeForm):
+class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
