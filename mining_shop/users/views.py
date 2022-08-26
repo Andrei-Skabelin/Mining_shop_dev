@@ -7,4 +7,4 @@ from .forms import CustomUserCreationForm
 class Registers(generic.CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
-    template_name = 'registration.html'
+    template_name = 'registrations'
