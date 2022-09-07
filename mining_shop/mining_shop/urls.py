@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.views.generic import TemplateView
 
 from users.views import *
 
@@ -24,7 +25,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('users')),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('users/', include('users.urls')),
 ]
 
 if settings.DEBUG:
