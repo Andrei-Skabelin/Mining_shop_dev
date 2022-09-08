@@ -19,7 +19,7 @@ class MyLoginView(LoginView):
 
 class RegistersView(View):
 
-    template_name = 'registration/registration.html'
+    template_name = 'users/registration.html'
 
     def get(self, request):
         context = {

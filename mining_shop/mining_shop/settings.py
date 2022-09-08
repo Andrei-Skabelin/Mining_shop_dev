@@ -66,7 +66,7 @@ ROOT_URLCONF = 'mining_shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['Mining_shop_dev/mining_shop/users/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
