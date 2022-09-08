@@ -23,7 +23,7 @@ class RegistersView(View):
 
     def get(self, request):
         context = {
-            'form': UserCreationForm
+            'form': UserCreationForm()
         }
         return render(request, self.template_name, context)
 
