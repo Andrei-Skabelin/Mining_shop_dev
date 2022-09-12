@@ -23,22 +23,22 @@ class RegistersView(View):
 
     def get(self, request):
         context = {
-            'form': UserCreationForm()
+            'form': UserCreationForm()         # Форма создания пользователя взята из Django
         }
         return render(request, self.template_name, context)
 
     def post(self, request):
-        form = UserCreationForm(request.POST)
+        form = UserCreationForm(request.POST) # Принимает и отправляет полученные данные отправленные от пост
 
-        if form.is_valid():
-            form.save()
-            email = form.cleaned_data.get('email')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(email=email, password=password)
+        if form.is_valid():                                              # Если данные пришли валидные то
+            form.save()                                                  # их сохраняем
+            email = form.cleaned_data.get('email')                       # потом получаем email
+            password = form.cleaned_data.get('password1')                # получаем пароль
+            user = authenticate(email=email, password=password)          # получает с базы данных пользователя принимая емаил и пароль
             send_email_for_verify(request, user)
             return redirect('confirm_email')
         context = {
-            'form': form
+            'form': form                                                 # если данные не валидные они передаются в шаблон для обработки и вывода ошибок
         }
         return render(request, self.template_name, context)
 

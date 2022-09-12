@@ -34,7 +34,7 @@ class AuthenticationForm(DjangoAuthenticationForm):
         return self.cleaned_data
 
 
-class UserCreationForm(DjangoUserCreationForm):
+class UserCreationForm(DjangoUserCreationForm):  # Переопределяет пользователя ккоторого мы выбрали в настройках
     email = forms.EmailField(label=_("Email"), max_length=254, widget=forms.EmailInput(attrs={'autocomplete': 'email'}))
 
     class Meta(DjangoUserCreationForm.Meta):

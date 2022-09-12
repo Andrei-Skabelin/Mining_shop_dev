@@ -33,9 +33,9 @@ EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'users.CustomUser'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #Убрать при заливке
+LOGIN_REDIRECT_URL = '/' #Осуществляет редерикт на главную страницу после входа
+LOGOUT_REDIRECT_URL = '/' #Осуществляет редерикт после выхода на главную страницу
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #Убрать при заливке(отпраляет письмо в консоль)
 
 # Application definition
 

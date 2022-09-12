@@ -6,7 +6,7 @@
 <h1>Login</h1>
 
     {% if form.errors %}
-        <p>{{ form.errors.error }}</p>
+        <p>{{ form.errors.error }}</p><!-- выводит ошибку если не валидный пароль-->
     {% endif %}
 
 <form action="{% url 'login' %}" method="post">
