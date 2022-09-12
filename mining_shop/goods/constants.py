@@ -1,0 +1,1 @@
+MAX_ITEM_IN_PAGE = 3
